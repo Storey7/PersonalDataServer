@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1=title
+
+    ul
+    each friend in friend_list
+      li
+        a(href=friend.url) #{friend.name}
+
+    else
+      li There are no friends.

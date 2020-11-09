@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  
+  table(class = 'table', id = 'bookTable')
+    tr  
+      th Date
+      th Title
+      th Author
+    each book in book_list
+      tr
+        td #{book.Date_Formatted}
+        td <a href = #{book.url}> #{book.title}
+        td <a href = #{book.author.url}> #{book.author.name}

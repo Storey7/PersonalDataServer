@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+
+  table(class = 'table', id = 'filmTable')
+    tr  
+      th Title
+      th Year Release
+      th Date Logged
+      th Rating
+    each film in film_list
+      tr
+        td #{film.Name}
+        td #{film.Year}
+        td #{film.Date_Logged_Formatted}
+        td #{film.Rating}

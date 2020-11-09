@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+        label(for='date') Date:
+        input#date.form-control(type='date', name='date' value=(undefined===event ? '' : event.date))
+    
+    div.form-group
+        label(for='spent') Spent:
+        input#spent.form-control(type='number', name='spent', value=(undefined===event ? '' : event.spent))
+
+    div.form-group
+        label(for='pints') Pints:
+        input#pints.form-control(type='number', name='pints', value=(undefined===event ? '' : event.pints))
+
+    div.form-group
+        label(for='shots') Shots:
+        input#shots.form-control(type='number', name='shots', value=(undefined===event ? '' : event.shots))
+
+    div.form-group
+        label(for='location') Location:
+        select#location.form-control(type='select', name='location', placeholder='Select Location')
+          for location in locations
+            if location
+              option(value=location._id, selected=(location._id.toString()==location._id.toString() ?'selected':false)) #{location.location}
+            else
+              option(value=location._id) #{location.location} 
+          
+    div.form-group
+        label(for='friend') Friends:
+        div
+          for friend in friends
+            div(style='display: inline; ppadding-right:10px;')
+              input.checkbox-input(type='checkbox', name='friend' id=friend._id, value=friend._id, checked=friend.checked)
+              label(for=friend._id) #{friend.name}
+
+    button.btn.btn-primary(type='submit') Submits
+

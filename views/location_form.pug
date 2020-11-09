@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  h1 #{title}
+          
+  form(method='POST' action='')
+    div.form-group
+      label(for='location') Location:
+      input#name.form-control(type='text', placeholder="Campbell's Tavern, John's house, etc..." name='location' required='true' value=(undefined===location ? '' : location.location) )
+    div.form-group
+      label(for='town') Town:
+      input#name.form-control(type='text', placeholder="Headford, Galway etc..." name='town' required='true' value=(undefined===location ? '' : location.town) )
+    div.form-group
+      label(for='country') Country:
+      input#name.form-control(type='text', placeholder="Ireland, Spain..." name='country' required='true' value=(undefined===location ? '' : location.country) )
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

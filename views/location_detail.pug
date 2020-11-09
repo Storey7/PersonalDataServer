@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Location: #{location.location}
+  p #{location.town}
+  p #{location.country}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Events
+    
+    dl
+    each event in location_events
+      dt 
+        #{event}
+
+    else
+      p This location has no events
+      
+  hr
+  p
+    a(href=location.url+'/delete') Delete location
+  p
+    a(href=location.url+'/update') Update location

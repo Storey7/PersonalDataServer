@@ -1,0 +1,31 @@
+.sidenav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.sidenav a {
+  padding: 4px 4px 4px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.table#bookTable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table#bookTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table#bookTable tr:hover {
+  background-color: #ddd;
+}

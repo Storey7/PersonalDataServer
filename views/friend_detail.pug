@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h1 Friend: #{friend.name}
+  p #{friend.known_since}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Events
+  
+    p This friend has no events (yet).
+      
+  hr
+  p
+    a(href=friend.url+'/delete') Delete friend
+  p
+    a(href=friend.url+'/update') Update friend

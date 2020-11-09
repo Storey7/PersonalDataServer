@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='FirstName LastName', name='name', required='true', value=(undefined===friend ? '' : friend.name))
+    div.form-group
+      label(for='known_since') Known since:
+      input#known_since.form-control(type='date', name='known_since' value=(undefined===friend ? '' : friend.known_since) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

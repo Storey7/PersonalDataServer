@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+
+  h2 #[strong This form is only a placeholder.]
+  h3 Ideally I would like to import the data from letterboxd on an automated basis. 
+  | In the meantime I will try to implement csv upload here. 
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='LBFile') LetterBoxd .csv File:
+      input#date.form-control(type='file', name='fileToUpload', value=(undefined===event ? '' : event.file) required='true') 
+    
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
