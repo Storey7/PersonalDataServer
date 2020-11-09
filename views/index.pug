@@ -2,9 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #[em ShortStorey], a webpage for me to collect and display various pieces of personal data. See a summary of this data below.
+  p Welcome to #[em ShortStoreys], a webpage for me to collect and display various pieces of personal data. See a summary of this data below.
 
-  h1 Dynamic content
+  h1 Record Counts
 
   if error
     p Error getting dynamic content.
@@ -14,20 +14,20 @@ block content
     ul
       li #[strong Authors:] !{data.author_count}
       li #[strong Books:] !{data.book_count}
-      li #[strong Nights Out:]
-      li #[strong Films:]
-      li #[strong Weight:]
-      li #[strong Cube Times:]
+      li #[strong Films:] 0
+      li #[strong Weight:] 0
+      li #[strong Cube Times:] 22
       
   h1 Roadmap </h1>
-    p The following is a high level summary of what I intend to add to this site. 
+  h3 Done </h3>
+    ul 
+      li Books / Authors / Genres
+      li Rubiks Cube times
+      li Weight
 
+  h3 To Do </h3>
     ul
-      li CRUD for Nights out, films watched, books read, body weight and rubiks cube times. 
-      li Tabular list of each dataset.
-      li Create records in browser
-      li Update and Delete in browser
-      li Relational Event tables
-      li URLs for individual records with additional detail 
-      li Visualisations (d3)
-      li Custom query builder.
+      li Add RSS feed from Letterboxd.com for films, as I already track my movies there.
+      li Add "Events" tracker, tracking event, location and friends in attendance. 
+      li Create a time program so that Rubik's cube time can be added more directly. 
+      li Add a login feature so that my friends can come and view the entries.  
