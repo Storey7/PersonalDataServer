@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    
+  h1 Weight Record
+  p #[strong Date:] #{weight.Date_Formatted}   
+  p #[strong Weight:] #{weight.weight}
+
+  hr
+  p
+    a(href=weight.url+'/delete') Delete weight record
+  p
+    a(href=weight.url+'/update') Update weight record

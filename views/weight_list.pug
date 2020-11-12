@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  table(class = 'table', id = 'weightTable')
+    tr  
+      th Date
+      th Weight
+    each weight in weight_list
+      tr
+        td <a href = #{weight.url}>#{weight.Date_Formatted}
+        td #{weight.weight}

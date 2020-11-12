@@ -10,6 +10,7 @@ var filmController = require('../controllers/filmController')
 var eventController = require('../controllers/eventController')
 var friendController = require("../controllers/friendController")
 var locationController = require("../controllers/locationController")
+var weightController = require("../controllers/weightController")
 
 /// BOOK ROUTES ///
 
@@ -195,6 +196,32 @@ router.get('/location/:id', locationController.location_detail);
 router.get('/locations', locationController.location_list);
 
 // Weight Routes
+// GET request for creating a event. NOTE This must come before route that displays event (uses id).
+router.get('/weight/create', weightController.weight_create_get);
+
+//POST request for creating weight.
+router.post('/weight/create', weightController.weight_create_post);
+
+// GET request to delete weight.
+router.get('/weight/:id/delete', weightController.weight_delete_get);
+
+// POST request to delete weight.
+router.post('/weight/:id/delete', weightController.weight_delete_post);
+
+// GET request to update weight.
+router.get('/weight/:id/update', weightController.weight_update_get);
+
+// POST request to update weight.
+router.post('/weight/:id/update', weightController.weight_update_post);
+
+// GET request for one weight.
+router.get('/weight/:id', weightController.weight_detail);
+
+// GET request for list of all weight.
+router.get('/weights', weightController.weight_list);
+
+// GET request for chart of all weights.
+router.get('/weight/chart', weightController.weight_chart);
 
 // Rubiks Routes
 
