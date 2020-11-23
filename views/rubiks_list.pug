@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  
+  table(class = 'table', id = 'rubiksTable')
+    tr  
+      th Date
+      th Time (Avg 3 of 5)
+      th Toy
+    each rubiks in rubiks_list
+      tr
+        td <a href = #{rubiks.url}>#{rubiks.Date_Formatted}
+        td #{rubiks.time}
+        td #{rubiks.toy}

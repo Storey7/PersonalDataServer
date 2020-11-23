@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    
+  h1 Weight Record
+  p #[strong Date:] #{rubiks.Date_Formatted}   
+  p #[strong Time (Avg 3 of 5):] #{rubiks.time}
+
+  hr
+  p
+    a(href=rubiks.url+'/delete') Delete rubiks record
+  p
+    a(href=rubiks.url+'/update') Update rubiks record

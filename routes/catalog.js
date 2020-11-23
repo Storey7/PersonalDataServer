@@ -11,6 +11,7 @@ var eventController = require('../controllers/eventController')
 var friendController = require("../controllers/friendController")
 var locationController = require("../controllers/locationController")
 var weightController = require("../controllers/weightController")
+var rubiksController = require("../controllers/rubiksController")
 
 /// BOOK ROUTES ///
 
@@ -224,5 +225,14 @@ router.get('/weights', weightController.weight_list);
 router.get('/weight/chart', weightController.weight_chart);
 
 // Rubiks Routes
+router.get('/rubiks/create', rubiksController.rubiks_create_get);
+router.post('/rubiks/create', rubiksController.rubiks_create_post);
+router.get('/rubiks/:id/delete', rubiksController.rubiks_delete_get);
+router.post('/rubiks/:id/delete', rubiksController.rubiks_delete_post);
+router.get('/rubiks/:id/update', rubiksController.rubiks_update_get);
+router.post('/rubiks/:id/update', rubiksController.rubiks_update_post);
+router.get('/rubiks/:id', rubiksController.rubiks_detail);
+router.get('/rubiks', rubiksController.rubiks_list);
+router.get('/rubiks/chart', rubiksController.rubiks_chart);
 
 module.exports = router;

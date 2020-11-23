@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+    h1 #{title}: #{rubiks.Date_Formatted}
+  
+    p Do you really want to delete this rubiks record?
+    
+    form(method='POST' action='')
+        div.form-group
+            input#id.form-control(type='hidden',name='id', required='true', value=rubiks._id )
+
+        button.btn.btn-primary(type='submit') Delete
